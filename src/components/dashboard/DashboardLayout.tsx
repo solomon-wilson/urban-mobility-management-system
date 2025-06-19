@@ -5,6 +5,10 @@ import { useAuth } from "@/components/auth/AuthContext";
 import OperatorOverview from "@/components/dashboard/OperatorOverview";
 import AssetMapView from "@/components/maps/AssetMapView";
 import ComplianceModule from "@/components/compliance/ComplianceModule";
+<<<<<<< HEAD
+=======
+import SmartMobilityPlatform from "@/components/dashboard/SmartMobilityPlatform";
+>>>>>>> 049e20b (Updated codebase with improve UI/UX, interactive maps)
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -52,6 +56,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
       id: "analytics",
       label: "Smart Mobility",
       icon: BarChart3,
+<<<<<<< HEAD
       component: (
         <Card className="w-full bg-background">
           <CardHeader>
@@ -64,6 +69,9 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
           </CardContent>
         </Card>
       ),
+=======
+      component: <SmartMobilityPlatform />,
+>>>>>>> 049e20b (Updated codebase with improve UI/UX, interactive maps)
     },
   ];
 

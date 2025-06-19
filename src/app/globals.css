@@ -67,3 +67,255 @@
     @apply bg-background text-foreground;
   }
 }
+<<<<<<< HEAD
+=======
+
+/* Leaflet Map Styles */
+.leaflet-container {
+  @apply rounded-lg;
+}
+
+.custom-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+.custom-popup .leaflet-popup-content-wrapper {
+  @apply rounded-lg shadow-lg;
+  border-radius: 8px;
+}
+
+.custom-popup .leaflet-popup-content {
+  margin: 8px;
+}
+
+.custom-popup .leaflet-popup-tip {
+  @apply shadow-lg;
+}
+
+/* Fix Leaflet attribution styling */
+.leaflet-control-attribution {
+  @apply text-xs opacity-60;
+}
+
+/* Ensure map controls are properly styled */
+.leaflet-bar {
+  @apply shadow-lg rounded-md;
+}
+
+.leaflet-bar a {
+  @apply hover:bg-gray-100 transition-colors;
+}
+
+/* Enhanced Animations and Micro-interactions */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes bounce-subtle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-2px); }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0px); opacity: 1; }
+}
+
+@keyframes slide-down {
+  from { transform: translateY(-10px); opacity: 0; }
+  to { transform: translateY(0px); opacity: 1; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scale-in {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.8); }
+}
+
+/* Animation utility classes */
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-bounce-subtle {
+  animation: bounce-subtle 2s ease-in-out infinite;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
+}
+
+.animate-slide-down {
+  animation: slide-down 0.3s ease-out;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.2s ease-out;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Enhanced hover effects */
+.hover-lift {
+  @apply transition-all duration-200 ease-out;
+}
+
+.hover-lift:hover {
+  @apply transform -translate-y-1 shadow-lg;
+}
+
+.hover-glow {
+  @apply transition-all duration-200 ease-out;
+}
+
+.hover-glow:hover {
+  @apply shadow-lg shadow-primary/25;
+}
+
+.hover-scale {
+  @apply transition-transform duration-200 ease-out;
+}
+
+.hover-scale:hover {
+  @apply scale-105;
+}
+
+/* Loading states */
+.loading-dots::after {
+  content: '';
+  animation: dots 1.5s steps(5, end) infinite;
+}
+
+@keyframes dots {
+  0%, 20% { content: '.'; }
+  40% { content: '..'; }
+  60%, 100% { content: '...'; }
+}
+
+/* Glassmorphism effect */
+.glass {
+  @apply bg-white/10 backdrop-blur-md border border-white/20;
+}
+
+.glass-dark {
+  @apply bg-black/10 backdrop-blur-md border border-white/10;
+}
+
+/* Gradient backgrounds */
+.gradient-bg {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%);
+}
+
+.gradient-border {
+  background: linear-gradient(135deg, rgb(59, 130, 246) 0%, rgb(147, 51, 234) 100%);
+  padding: 1px;
+  border-radius: 0.5rem;
+}
+
+.gradient-border > * {
+  background: white;
+  border-radius: calc(0.5rem - 1px);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all;
+}
+
+/* Card enhancements */
+.card-hover {
+  @apply transition-all duration-200 ease-out hover:shadow-lg hover:-translate-y-1;
+}
+
+.card-glow {
+  @apply transition-all duration-200 ease-out hover:shadow-xl hover:shadow-primary/10;
+}
+
+/* Text animations */
+.text-shimmer {
+  background: linear-gradient(90deg, #64748b 25%, #3b82f6 50%, #64748b 75%);
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 2s linear infinite;
+}
+
+/* Pulse variants */
+.pulse-slow {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.pulse-fast {
+  animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Stagger animation delays */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+
+/* Interactive elements */
+.interactive {
+  @apply transition-all duration-200 ease-out cursor-pointer;
+}
+
+.interactive:hover {
+  @apply transform scale-105;
+}
+
+.interactive:active {
+  @apply transform scale-95;
+}
+
+/* Status indicators */
+.status-pulse {
+  @apply relative;
+}
+
+.status-pulse::before {
+  content: '';
+  @apply absolute inset-0 rounded-full animate-ping;
+}
+
+.status-operational::before {
+  @apply bg-green-400;
+}
+
+.status-maintenance::before {
+  @apply bg-yellow-400;
+}
+
+.status-error::before {
+  @apply bg-red-400;
+}
+>>>>>>> 049e20b (Updated codebase with improve UI/UX, interactive maps)

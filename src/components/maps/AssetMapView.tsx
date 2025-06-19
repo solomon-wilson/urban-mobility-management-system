@@ -1,6 +1,10 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+<<<<<<< HEAD
+=======
+import dynamic from "next/dynamic";
+>>>>>>> 049e20b (Updated codebase with improve UI/UX, interactive maps)
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -36,8 +40,35 @@ import {
   Eye,
   Edit,
   Trash2,
+<<<<<<< HEAD
 } from "lucide-react";
 
+=======
+  Loader2,
+  Layers,
+  Maximize,
+} from "lucide-react";
+
+// Dynamic imports for map components (client-side only)
+const InteractiveMap = dynamic(() => import('./InteractiveMap'), {
+  ssr: false,
+  loading: () => (
+    <div className="h-full flex items-center justify-center">
+      <Loader2 className="h-8 w-8 animate-spin" />
+    </div>
+  ),
+});
+
+const GoogleMapsView = dynamic(() => import('./GoogleMapsView'), {
+  ssr: false,
+  loading: () => (
+    <div className="h-full flex items-center justify-center">
+      <Loader2 className="h-8 w-8 animate-spin" />
+    </div>
+  ),
+});
+
+>>>>>>> 049e20b (Updated codebase with improve UI/UX, interactive maps)
 interface Asset {
   id: string;
   name: string;
@@ -65,7 +96,11 @@ const AssetMapView: React.FC<AssetMapViewProps> = ({
       id: "1",
       name: "Central Bus Terminal",
       type: "terminal",
+<<<<<<< HEAD
       address: "123 Main Street, Freetown",
+=======
+      address: "Siaka Stevens Street, Central Freetown",
+>>>>>>> 049e20b (Updated codebase with improve UI/UX, interactive maps)
       coordinates: { lat: 8.4657, lng: -13.2317 },
       status: "operational",
       capacity: 500,
@@ -76,18 +111,30 @@ const AssetMapView: React.FC<AssetMapViewProps> = ({
       id: "2",
       name: "Victoria Park Bus Stop",
       type: "bus_stop",
+<<<<<<< HEAD
       address: "Victoria Park, Freetown",
       coordinates: { lat: 8.4701, lng: -13.2364 },
       status: "operational",
       capacity: 50,
       description: "High-traffic bus stop near park",
+=======
+      address: "Victoria Park, Central Freetown",
+      coordinates: { lat: 8.4701, lng: -13.2364 },
+      status: "operational",
+      capacity: 50,
+      description: "High-traffic bus stop near Victoria Park",
+>>>>>>> 049e20b (Updated codebase with improve UI/UX, interactive maps)
       lastUpdated: "2024-01-10",
     },
     {
       id: "3",
       name: "East End Depot",
       type: "depot",
+<<<<<<< HEAD
       address: "45 Industrial Road, Freetown",
+=======
+      address: "Kissy Road, East End",
+>>>>>>> 049e20b (Updated codebase with improve UI/UX, interactive maps)
       coordinates: { lat: 8.4612, lng: -13.2156 },
       status: "operational",
       capacity: 100,
@@ -98,7 +145,11 @@ const AssetMapView: React.FC<AssetMapViewProps> = ({
       id: "4",
       name: "Downtown Maintenance Hub",
       type: "maintenance_facility",
+<<<<<<< HEAD
       address: "78 Service Lane, Freetown",
+=======
+      address: "Pademba Road, Central Freetown",
+>>>>>>> 049e20b (Updated codebase with improve UI/UX, interactive maps)
       coordinates: { lat: 8.4689, lng: -13.2298 },
       status: "operational",
       capacity: 25,
@@ -109,13 +160,97 @@ const AssetMapView: React.FC<AssetMapViewProps> = ({
       id: "5",
       name: "West Fuel Station",
       type: "fuel_station",
+<<<<<<< HEAD
       address: "92 West Avenue, Freetown",
+=======
+      address: "Wilkinson Road, West End",
+>>>>>>> 049e20b (Updated codebase with improve UI/UX, interactive maps)
       coordinates: { lat: 8.4634, lng: -13.2445 },
       status: "maintenance",
       capacity: 10,
       description: "Fleet refueling station - under maintenance",
       lastUpdated: "2024-01-05",
     },
+<<<<<<< HEAD
+=======
+    {
+      id: "6",
+      name: "Lumley Beach Terminal",
+      type: "terminal",
+      address: "Lumley Beach Road, Aberdeen",
+      coordinates: { lat: 8.4521, lng: -13.2789 },
+      status: "operational",
+      capacity: 200,
+      description: "Coastal terminal serving western areas",
+      lastUpdated: "2024-01-14",
+    },
+    {
+      id: "7",
+      name: "Murray Town Bus Stop",
+      type: "bus_stop",
+      address: "Murray Town Road, Murray Town",
+      coordinates: { lat: 8.4523, lng: -13.2556 },
+      status: "operational",
+      capacity: 30,
+      description: "Community bus stop serving Murray Town",
+      lastUpdated: "2024-01-11",
+    },
+    {
+      id: "8",
+      name: "Wellington Depot",
+      type: "depot",
+      address: "Wellington Industrial Area",
+      coordinates: { lat: 8.4398, lng: -13.1867 },
+      status: "operational",
+      capacity: 150,
+      description: "Secondary depot for eastern routes",
+      lastUpdated: "2024-01-13",
+    },
+    {
+      id: "9",
+      name: "Congo Cross Bus Stop",
+      type: "bus_stop",
+      address: "Congo Cross, Hill Station",
+      coordinates: { lat: 8.4789, lng: -13.2234 },
+      status: "operational",
+      capacity: 40,
+      description: "Important transfer point for hill routes",
+      lastUpdated: "2024-01-09",
+    },
+    {
+      id: "10",
+      name: "Aberdeen Fuel Station",
+      type: "fuel_station",
+      address: "Aberdeen Ferry Junction",
+      coordinates: { lat: 8.4467, lng: -13.2678 },
+      status: "operational",
+      capacity: 15,
+      description: "Strategic fuel station near ferry terminal",
+      lastUpdated: "2024-01-07",
+    },
+    {
+      id: "11",
+      name: "Mountain Cut Maintenance",
+      type: "maintenance_facility",
+      address: "Mountain Cut Road, Hill Station",
+      coordinates: { lat: 8.4823, lng: -13.2089 },
+      status: "decommissioned",
+      capacity: 20,
+      description: "Former maintenance facility - decommissioned",
+      lastUpdated: "2024-01-06",
+    },
+    {
+      id: "12",
+      name: "Kissy Terminal",
+      type: "terminal",
+      address: "Kissy Road, Kissy",
+      coordinates: { lat: 8.4578, lng: -13.2034 },
+      status: "operational",
+      capacity: 300,
+      description: "Eastern terminal serving Kissy and beyond",
+      lastUpdated: "2024-01-16",
+    },
+>>>>>>> 049e20b (Updated codebase with improve UI/UX, interactive maps)
   ],
 }) => {
   const [assets, setAssets] = useState<Asset[]>(initialAssets);
@@ -126,6 +261,10 @@ const AssetMapView: React.FC<AssetMapViewProps> = ({
   const [selectedAsset, setSelectedAsset] = useState<Asset | null>(null);
   const [showAddDialog, setShowAddDialog] = useState(false);
   const [mapView, setMapView] = useState<"list" | "map">("list");
+<<<<<<< HEAD
+=======
+  const [mapProvider, setMapProvider] = useState<"leaflet" | "google">("google");
+>>>>>>> 049e20b (Updated codebase with improve UI/UX, interactive maps)
 
   // Filter assets based on search and filters
   useEffect(() => {
@@ -456,6 +595,7 @@ const AssetMapView: React.FC<AssetMapViewProps> = ({
           })}
         </div>
       ) : (
+<<<<<<< HEAD
         /* Map View Placeholder */
         <Card className="h-96">
           <CardContent className="h-full flex items-center justify-center">
@@ -474,6 +614,73 @@ const AssetMapView: React.FC<AssetMapViewProps> = ({
             </div>
           </CardContent>
         </Card>
+=======
+        /* Interactive Map View */
+        <div className="space-y-4">
+          {/* Map Controls */}
+          <Card>
+            <CardContent className="p-4">
+              <div className="flex flex-wrap items-center justify-between gap-4">
+                <div className="flex items-center gap-4">
+                  <Badge variant="outline" className="text-xs">
+                    <Layers className="h-3 w-3 mr-1" />
+                    Showing {filteredAssets.length} assets
+                  </Badge>
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <span className="flex items-center gap-1">
+                      <div className="w-3 h-3 bg-green-500 rounded-full" />
+                      Operational ({assets.filter(a => a.status === 'operational').length})
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <div className="w-3 h-3 bg-yellow-500 rounded-full" />
+                      Maintenance ({assets.filter(a => a.status === 'maintenance').length})
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <div className="w-3 h-3 bg-red-500 rounded-full" />
+                      Decommissioned ({assets.filter(a => a.status === 'decommissioned').length})
+                    </span>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="flex items-center bg-muted rounded-lg p-1">
+                    <Button 
+                      variant={mapProvider === "google" ? "default" : "ghost"}
+                      size="sm"
+                      className="text-xs h-7"
+                      onClick={() => setMapProvider("google")}
+                    >
+                      Google Maps
+                    </Button>
+                    <Button 
+                      variant={mapProvider === "leaflet" ? "default" : "ghost"}
+                      size="sm"
+                      className="text-xs h-7"
+                      onClick={() => setMapProvider("leaflet")}
+                    >
+                      OpenStreetMap
+                    </Button>
+                  </div>
+                  <Button variant="outline" size="sm">
+                    <Maximize className="h-4 w-4 mr-2" />
+                    Fullscreen
+                  </Button>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Map Container */}
+          <Card className="h-[600px]">
+            <CardContent className="p-0 h-full">
+              {mapProvider === "google" ? (
+                <GoogleMapsView assets={filteredAssets} onAssetClick={setSelectedAsset} />
+              ) : (
+                <InteractiveMap assets={filteredAssets} onAssetClick={setSelectedAsset} />
+              )}
+            </CardContent>
+          </Card>
+        </div>
+>>>>>>> 049e20b (Updated codebase with improve UI/UX, interactive maps)
       )}
 
       {/* Asset Detail Dialog */}

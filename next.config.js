@@ -3,7 +3,14 @@
 const nextConfig = {
     images: {
         domains: ['images.unsplash.com'],
+<<<<<<< HEAD
     }
+=======
+    },
+    env: {
+        NEXT_PUBLIC_GOOGLE_MAPS_API_KEY: process.env.GOOGLE_MAPS_API_KEY,
+    },
+>>>>>>> 049e20b (Updated codebase with improve UI/UX, interactive maps)
 };
 
 if (process.env.NEXT_PUBLIC_TEMPO) {

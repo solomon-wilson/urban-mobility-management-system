@@ -1,6 +1,11 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+<<<<<<< HEAD
+=======
+import { LoadingOverlay, Skeleton } from "@/components/ui/loading";
+import { transitionClasses } from "@/lib/animations";
+>>>>>>> 049e20b (Updated codebase with improve UI/UX, interactive maps)
 import {
   Card,
   CardContent,
@@ -115,6 +120,10 @@ const OperatorOverview: React.FC<OperatorOverviewProps> = ({
   },
 }) => {
   const [isRefreshing, setIsRefreshing] = useState(false);
+<<<<<<< HEAD
+=======
+  const [isLoading, setIsLoading] = useState(true);
+>>>>>>> 049e20b (Updated codebase with improve UI/UX, interactive maps)
   const [realTimeData, setRealTimeData] = useState({
     activeRoutes: 12,
     passengerCount: 1247,
@@ -122,6 +131,17 @@ const OperatorOverview: React.FC<OperatorOverviewProps> = ({
     fuelEfficiency: 85,
   });
 
+<<<<<<< HEAD
+=======
+  // Simulate initial loading
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, []);
+
+>>>>>>> 049e20b (Updated codebase with improve UI/UX, interactive maps)
   // Simulate real-time data updates
   useEffect(() => {
     const interval = setInterval(() => {
@@ -178,7 +198,12 @@ const OperatorOverview: React.FC<OperatorOverviewProps> = ({
   };
 
   return (
+<<<<<<< HEAD
     <div className="bg-white p-6 rounded-lg space-y-6">
+=======
+    <LoadingOverlay loading={isLoading} message="Loading dashboard...">
+      <div className="bg-white p-6 rounded-lg space-y-6 animate-fade-in">
+>>>>>>> 049e20b (Updated codebase with improve UI/UX, interactive maps)
       {/* Enhanced Header Section */}
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 mb-8">
         <div className="flex-1">
@@ -518,7 +543,11 @@ const OperatorOverview: React.FC<OperatorOverviewProps> = ({
             </TabsTrigger>
           </TabsList>
           <TabsContent value="inspections" className="mt-6">
+<<<<<<< HEAD
             <Card className="hover:shadow-md transition-shadow">
+=======
+        <Card className={`card-hover stagger-1 ${transitionClasses.default}`}>
+>>>>>>> 049e20b (Updated codebase with improve UI/UX, interactive maps)
               <CardHeader className="pb-3">
                 <CardTitle className="text-lg flex items-center justify-between">
                   <span>Inspection History</span>
